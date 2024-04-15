@@ -9,10 +9,11 @@ import palmerpenguins  # Palmer Penguins dataset for sample data
 df = palmerpenguins.load_penguins()
 
 # Set up the page options for the dashboard
-ui.page_opts(title="Penguins Dashboard", fillable=True)
+ui.page_opts(title="Teslim's Penguins Dashboard", fillable=True)
 
 # Define the sidebar with filter controls
-with ui.sidebar(title="Filter Controls"):
+
+with ui.sidebar(title="Filter Controls", class_name="custom-sidebar"):
     # Input slider for penguin mass filter
     ui.input_slider("mass", "Mass", 2000, 6000, 6000)
     # Checkbox group for penguin species filter
