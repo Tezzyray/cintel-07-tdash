@@ -28,17 +28,17 @@ with ui.sidebar(title="Filter Controls"):
     # GitHub links
     ui.a(
         "GitHub Source Code",
-        href="https://github.com/denisecase/cintel-07-tdash",
+        href="https://github.com/Tezzyray/cintel-07-tdash",
         target="_blank",
     )
     ui.a(
         "GitHub Live App",
-        href="https://denisecase.github.io/cintel-07-tdash/",
+        href="https://tezzyray.github.io/cintel-07-tdash/",
         target="_blank",
     )
     ui.a(
         "Report Issues on GitHub",
-        href="https://github.com/denisecase/cintel-07-tdash/issues",
+        href="https://github.com/Tezzyray/cintel-07-tdash/issues",
         target="_blank",
     )
     # External links
