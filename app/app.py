@@ -9,10 +9,10 @@ import palmerpenguins  # Palmer Penguins dataset for sample data
 df = palmerpenguins.load_penguins()
 
 # Set up the page options for the dashboard
-ui.page_opts(title="Penguins dashboard", fillable=True)
+ui.page_opts(title="Penguins Dashboard", fillable=True)
 
 # Define the sidebar with filter controls
-with ui.sidebar(title="Filter controls"):
+with ui.sidebar(title="Filter Controls"):
     # Input slider for penguin mass filter
     ui.input_slider("mass", "Mass", 2000, 6000, 6000)
     # Checkbox group for penguin species filter
@@ -24,32 +24,32 @@ with ui.sidebar(title="Filter controls"):
     )
     # Links section
     ui.hr()  # Horizontal rule for visual separation
-    ui.h6("Links")  # Heading for links
+    ui.h6("Useful Links")  # Heading for links
     # GitHub links
     ui.a(
-        "GitHub Source",
+        "GitHub Source Code",
         href="https://github.com/denisecase/cintel-07-tdash",
         target="_blank",
     )
     ui.a(
-        "GitHub App",
+        "GitHub Live App",
         href="https://denisecase.github.io/cintel-07-tdash/",
         target="_blank",
     )
     ui.a(
-        "GitHub Issues",
+        "Report Issues on GitHub",
         href="https://github.com/denisecase/cintel-07-tdash/issues",
         target="_blank",
     )
     # External links
-    ui.a("PyShiny", href="https://shiny.posit.co/py/", target="_blank")
+    ui.a("PyShiny Documentation", href="https://shiny.posit.co/py/", target="_blank")
     ui.a(
-        "Template: Basic Dashboard",
+        "Basic Dashboard Template",
         href="https://shiny.posit.co/py/templates/dashboard/",
         target="_blank",
     )
     ui.a(
-        "See also",
+        "Additional Examples",
         href="https://github.com/denisecase/pyshiny-penguins-dashboard-express",
         target="_blank",
     )
@@ -58,21 +58,21 @@ with ui.sidebar(title="Filter controls"):
 with ui.layout_column_wrap(fill=False):
     # Value boxes for displaying statistics
     with ui.value_box(showcase=icon_svg("earlybirds")):
-        "Number of penguins"
+        "Total Penguins"
 
         @render.text
         def count():
             return filtered_df().shape[0]
 
     with ui.value_box(showcase=icon_svg("ruler-horizontal")):
-        "Average bill length"
+        "Average Bill Length"
 
         @render.text
         def bill_length():
             return f"{filtered_df()['bill_length_mm'].mean():.1f} mm"
 
     with ui.value_box(showcase=icon_svg("ruler-vertical")):
-        "Average bill depth"
+        "Average Bill Depth"
 
         @render.text
         def bill_depth():
@@ -82,7 +82,7 @@ with ui.layout_column_wrap(fill=False):
 with ui.layout_columns():
     # Card for scatter plot of bill length and depth
     with ui.card(full_screen=True):
-        ui.card_header("Bill length and depth")
+        ui.card_header("Bill Length vs Depth")
 
         @render.plot
         def length_depth():
@@ -95,7 +95,7 @@ with ui.layout_columns():
 
     # Card for displaying summary statistics
     with ui.card(full_screen=True):
-        ui.card_header("Penguin data")
+        ui.card_header("Penguin Data")  # Corrected the typo here
 
         @render.data_frame
         def summary_statistics():
